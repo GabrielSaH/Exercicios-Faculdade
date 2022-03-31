@@ -54,21 +54,21 @@ if questao == "5" or questao == "todas":
 
 #   6. Soma dos dígitos de um inteiro.
 if questao == "6" or questao == "todas":
-    numeroTotal = str(input("qual o numero?"))
-    numero01 = numeroTotal[0]
-    numero02 = numeroTotal[1]
-    numero03 = numeroTotal[2]
-    numero04 = numeroTotal[3]
-    numeroResultado = int(numero01) + int(numero02) + int(numero03) + int(numero04)
+    numeroTotal = int(input("qual o numero?"))
+    milhar = numeroTotal // 1000
+    centena = (numeroTotal % 1000) // 100
+    dezena = ((numeroTotal % 1000) % 100) // 10
+    unidade = ((numeroTotal % 1000) % 100) % 10
+    numeroResultado = milhar + centena + dezena + unidade
     print (f'o resultado da soma da {numeroResultado}')
 
 
 #   7. Centena, dezena, unidade.
 if questao == "7" or questao == "todas":
-    numeroInicial = input('qual o numero de 3 digitos?')
-    centanas = numeroInicial[0]
-    dezenas = numeroInicial[1]
-    unidades = numeroInicial[2]
+    numeroInicial = int(input('qual o numero de 3 digitos?'))
+    centanas = numeroInicial // 100
+    dezenas = (numeroInicial % 100) // 10
+    unidades = ((numeroInicial % 100) % 10)
     print(f'o numero de centenas é: {centanas} o de dezenas: {dezenas} e o de unidades: {unidades}')
 
 
@@ -82,9 +82,18 @@ if questao == "8" or questao == "todas":
 
 
 #   9. Data invertida.
+#   Nao funciona se tiver um 0 no inicio do dia mes ou ano   ex: 010219  pq o python vai retirar os zeros na aritmetica 
 if questao == "9" or questao == "todas":
     data = int(input("qual a data? [DDMMAA]"))
-    dia = data // 1000
-    mes = (data - (dia * 1000)) // 100
-    ano = ((data - (dia * 1000)) - (mes * 100))
+    dia = data // 10000
+    mes = (data % 10000) // 100
+    ano = ((data % 10000) % 100)
     print (f'{ano}{mes}{dia}')
+
+
+#   10. Número de matrícula.
+if questao == "10" or questao == "todas":
+    matricula = int(input("qual o seu codigo de matricula?"))
+    anoMatricula = matricula // 10_000
+    semestreMatricula = (matricula % 10_000) // 1_000
+    print(f'o aluno foi matriculado no ano de 20{anoMatricula} e no {semestreMatricula} semestre')
