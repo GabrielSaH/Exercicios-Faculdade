@@ -1,0 +1,101 @@
+questao = input("qual a questao voce gostaria de acessar?")
+
+
+if questao == "1" or questao == "todas":
+    numero1 = int(input("qual o numero inteiro?"))
+    if numero1 % 2 == 0:
+        print("seu numero é par")
+    else:
+        print("seu numero é impar")
+
+
+if questao == "2" or questao == "todas":
+    idadeCao = float(input("qual a idade do cachorro?"))
+    if idadeCao <= 0:
+        print("Erro: digite uma idade valida")
+    if idadeCao >= 2:
+        idadeTotalCao = 21
+        idadeCao -= 2
+    elif idadeCao >= 1:
+        idadeTotalCao = 10.5
+        idadeCao -= 1
+    idadeTotalCao += idadeCao * 4
+    print(f'a idade do cachorro em anos caninos é {idadeTotalCao} anos')
+
+
+if questao == "3" or questao == "todas":
+    letra = input("qual a letra?")
+    vogais = ["a", "e", "i", "o", "u"]
+    if letra in vogais:
+        print("é vogal")
+    else:
+        print("é consuante")
+
+
+if questao == "4" or questao == "todas":
+    poligono = int(input("quantos lados tem o poligono?"))
+    if poligono == 3:
+        print("triângulo ou trilátero")
+    elif poligono == 4:
+        print("quadrângulo ou quadrilátero")
+    elif poligono == 5:
+        print("pentágono ou pentalátero")
+    elif poligono == 6:
+        print("hexágono ou hexalátero.")
+    elif poligono == 7:
+        print("heptágono ou heptalátero.")
+    elif poligono == 8:
+        print("octágono ou octalátero.")
+    elif poligono == 9:
+        print("eneágono ou enelátero")
+    elif poligono == 10:
+        print("decágono ou decalátero")
+    else:
+        print("numero de lados muito pequeno, muito grande ou invalido")
+
+
+if questao == "5" or questao == "todas":
+    mes = input("qual o mes?")
+    mes31 = ["janeiro", "março", "maio", "julho", "agosto", "outubro", "dezembro"]
+    mes30 = ["abril", "junho", "setembro", "novembro"]
+    if mes in mes31:
+        print("o mes tem 31 dias")
+    if mes in mes30:
+        print("o mes tem 30 dias")
+    if mes == "fevereiro":
+        print("o mes tem 29 ou 28 dias")
+
+
+if questao == "6" or questao == "todas":
+    ladoTriangulo1 = float(input("qual o valor do primeiro lado"))
+    ladoTriangulo2 = float(input("qual o valor do segundo lado"))
+    ladoTriangulo3 = float(input("qual o valor do terceiro lado"))
+    if ladoTriangulo1 == ladoTriangulo2:
+        if ladoTriangulo1 == ladoTriangulo3:
+            print("triangulo equilatero")
+        else:
+            print("traingulo isosceles")
+    else:
+        print("triangulo escaleno")
+
+
+if questao == "7" or questao == "todas":
+    volumeInput = int(input("qual o valor em decibeis do som "))
+    if volumeInput < 40:
+        print("o som é menor doque o de uma sala silenciosa")
+    elif volumeInput == 40:
+        print("o som equivale a uma sala silenciosa")
+    elif 70 > volumeInput > 40:
+        print("o som esta entre uma sala silenciosa e um cortador de grama")
+    elif volumeInput == 70:
+        print("o som equivale a um cortador de grama")
+    elif 106 > volumeInput > 70:
+        print("o som esta entre um cortador de gramas e um despertador")
+    elif volumeInput == 106:
+        print("o som equivale a um despertador")
+    elif 130 > volumeInput > 106:
+        print("o som esta entre um despertador e uma britaadeira")
+    elif volumeInput == 130:
+        print("o som equivale a uma britadeira")
+    elif volumeInput > 130:
+        print("o som é maior doque o de uma britadeira")
